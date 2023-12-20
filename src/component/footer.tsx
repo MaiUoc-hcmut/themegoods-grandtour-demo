@@ -33,46 +33,48 @@ export default function Footer() {
                                     Mon - Sat 8.00 - 18.00 Sunday CLOSED
                                 </div>
                             </div>
-                            <div className="footer-social-network-menu">
-                                <div className="footer-social-icon-container footer-facebook">
-                                    <a 
-                                        href="https://www.facebook.com/"
-                                        className="footer-social-network-icon"
-                                    >
-                                        <img src="/icon/facebook.png" alt="facebook icon" />
-                                    </a>
-                                </div>
-                                <div className="footer-social-icon-container footer-X">
-                                    <a 
-                                        href="https://twitter.com/"
-                                        className="footer-social-network-icon"
-                                    >
-                                        <img src="/icon/twitter.png" alt="twitter icon" />
-                                    </a>
-                                </div>
-                                <div className="footer-social-icon-container footer-utube">
-                                    <a 
-                                        href="https://www.youtube.com/"
-                                        className="footer-social-network-icon"
-                                    >
-                                        <img src="/icon/youtube.png" alt="youtube icon" />
-                                    </a>
-                                </div>
-                                <div className="footer-social-icon-container footer-insta">
-                                    <a 
-                                        href="https://www.instagram.com/"
-                                        className="footer-social-network-icon"
-                                    >
-                                        <img src="/icon/instagram.png" alt="instagram icon" />
-                                    </a>
-                                </div>
-                                <div className="footer-social-icon-container footer-reddit">
-                                    <a 
-                                        href="https://www.reddit.com/"
-                                        className="footer-social-network-icon"
-                                    >
-                                        <img src="/icon/pinterest.png" alt="pinterest icon" style={{borderRadius: "50%"}} />
-                                    </a>
+                            <div className="footer-social-network-menu-container">
+                                <div className="footer-social-network-menu">
+                                    <div className="footer-social-icon-container footer-facebook">
+                                        <a 
+                                            href="https://www.facebook.com/"
+                                            className="footer-social-network-icon"
+                                        >
+                                            <img src="/icon/facebook.png" alt="facebook icon" />
+                                        </a>
+                                    </div>
+                                    <div className="footer-social-icon-container footer-X">
+                                        <a 
+                                            href="https://twitter.com/"
+                                            className="footer-social-network-icon"
+                                        >
+                                            <img src="/icon/twitter.png" alt="twitter icon" />
+                                        </a>
+                                    </div>
+                                    <div className="footer-social-icon-container footer-utube">
+                                        <a 
+                                            href="https://www.youtube.com/"
+                                            className="footer-social-network-icon"
+                                        >
+                                            <img src="/icon/youtube.png" alt="youtube icon" />
+                                        </a>
+                                    </div>
+                                    <div className="footer-social-icon-container footer-insta">
+                                        <a 
+                                            href="https://www.instagram.com/"
+                                            className="footer-social-network-icon"
+                                        >
+                                            <img src="/icon/instagram.png" alt="instagram icon" />
+                                        </a>
+                                    </div>
+                                    <div className="footer-social-icon-container footer-reddit">
+                                        <a 
+                                            href="https://www.reddit.com/"
+                                            className="footer-social-network-icon"
+                                        >
+                                            <img src="/icon/pinterest.png" alt="pinterest icon" style={{borderRadius: "50%"}} />
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

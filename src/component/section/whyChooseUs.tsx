@@ -1,18 +1,8 @@
-import React, { Fragment, useRef } from "react";
-import { useTransform, useScroll, motion } from "framer-motion";
+import React, { Fragment } from "react";
 import "@/style/why-choose-us/why-choose-us.css";
 
 
 export default function WhyChooseUs() {
-
-    // const container = useRef<HTMLDivElement>(null);
-
-    // const { scrollYProgress } = useScroll({
-    //     target: container,
-    //     offset: ["start end", "end start"],
-    // })
-
-    // const y = useTransform(scrollYProgress, [0, 3], [0, window.innerHeight]);
 
     return (
         <Fragment>

@@ -1,7 +1,7 @@
 'use client'
 import React, { Fragment, useState, useEffect } from "react";
 import { SearchOutlined, CalendarOutlined, SwapOutlined, DownOutlined, UpOutlined, DollarOutlined } from '@ant-design/icons';
-import ReactPlayer from "react-player";
+// import dynamic from "next/dynamic";
 import "@/style/search/search-trip.css";
 
 declare global {
@@ -10,6 +10,11 @@ declare global {
         YT: any
     }
 }
+
+// const DynamicJarallax = dynamic(
+//     () => import('@/component/parallax/parallax-video'),
+//     { ssr: false }
+// );
 
 const MonthToSelect = [
     "Any Month",
@@ -97,35 +102,19 @@ export default function SearchTrip() {
         )
     })
 
-    useEffect(() => {
-        // This code loads the IFrame Player API code asynchronously.
-        const tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        const firstScriptTag = document.getElementsByTagName('script')[0];
-        if (firstScriptTag.parentNode) {
-            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-        }
+    const [scrollY, setScrollY] = useState(0);
 
-        let player;
-        // This function creates an <iframe> (and YouTube player)
-        // after the API code downloads.
-        window.onYouTubeIframeAPIReady = function() {
-            player = new window.YT.Player('player', {
-                videoId: "JPe2mwq96cw",
-                playerVars: {
-                    'autoplay': 1,
-                    'loop': 1,
-                    'playlist': "JPe2mwq96cw",
-                    'controls': 0,
-                    'rel': 0,
-                    'autohide': 1,
-                    'showinfo': 0,
-                    'mute': 1,
-                    'playsinline': 1
-                }
-            });
+    const handleScroll = () => {
+        setScrollY(window.scrollY)
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
         }
-    }, []);
+    })
 
     return (
         <Fragment>
@@ -223,20 +212,21 @@ export default function SearchTrip() {
                     </div>
                 </div>
                 <div 
-                    className="iframe-container"
+                    className="jarallax"
                     id="background-youtube-player"
                     data-jarallax-video="https://www.youtube.com/watch?v=JPe2mwq96cw"
+                    style={{
+                        top: scrollY / 2.5
+                    }}
                 >
                     <iframe 
                         src="https://youtube.com/embed/JPe2mwq96cw?autoplay=1&controls=0&showinfo=0&autohide=1&mute=1&loop=1&playlist=JPe2mwq96cw&rel=0"
                         allowFullScreen
                         style={{ border: "none" }}
+                        className="iframe-video"
                     >
                     </iframe>
                 </div>
-                {/* <div className="iframe-container">
-                    <div id="player"></div>
-                </div> */}
             </div>
         </Fragment>
     );

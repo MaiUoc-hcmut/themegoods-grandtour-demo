@@ -27,7 +27,8 @@ export default function Header({
     // Hiển thị hoặc ẩn header khi cuộn
     const handleScroll = () => {
         const currentScrollPos = window.scrollY;
-        const visible = prevScrollPos > currentScrollPos;
+        const w = window.innerWidth;
+        const visible = (prevScrollPos > currentScrollPos) || (w < 780);
 
         const color = window.scrollY > 300 ? 'white' : '';
 

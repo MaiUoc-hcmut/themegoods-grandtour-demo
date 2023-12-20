@@ -1,4 +1,5 @@
-import React, { Fragment } from "react";
+'use client'
+import React, { Fragment, useEffect, useState } from "react";
 import { SettingOutlined, HeartOutlined, ReadOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import "@/style/menubar/menubar.css";
 
@@ -9,9 +10,26 @@ export default function OptionMenuBar({
     state: boolean,
     setOpen: (value: boolean) => void,
 }) {
+
+    const [w, setW] = useState(0);
+
+    const handleResize = () => {
+        setW(window.innerWidth);
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        }
+    }, [])
+
     return (
         <Fragment>
-            <div className={`menu-bar-wrapper ${state ? "open" : "close"}`}>
+            <div 
+                className={`menu-bar-wrapper ${state ? "open" : "close"} ${w < 780 ? "hide" : ""}`}
+            >
                 <div 
                     className="option-menu-icon-container"
                     data-title="Choose Theme Styling"

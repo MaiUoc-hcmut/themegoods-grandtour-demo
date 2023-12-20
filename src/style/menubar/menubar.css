@@ -71,3 +71,7 @@
     border: 10px solid transparent;	
     border-left: 11px solid #000;
 }
+
+.hide {
+    display: none;
+}

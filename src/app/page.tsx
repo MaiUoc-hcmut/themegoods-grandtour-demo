@@ -10,7 +10,7 @@ import BestValueTrip from '@/component/section/bestValueTrip';
 import WhyChooseUs from '@/component/section/whyChooseUs';
 import ArticleAndTips from '@/component/section/article&Tips';
 import BackToTop from '@/component/backToTop';
-import "@/style/main-page.css";
+import "@/style/global.css";
 
 export default function Home() {
 
