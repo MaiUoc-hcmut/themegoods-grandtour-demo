@@ -1,0 +1,61 @@
+.reasons-to-choose-service {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 8%;
+    gap: 2.75%;
+}
+
+.reason-to-choose-service {
+    width: 31.5%;
+    text-align: center;
+}
+
+.reason-image {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reason-image img {
+    width: 100%;
+}
+
+.main-reason {
+    font: 20px "Poppins", Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    margin: 15px 0;
+}
+
+.reason-description {
+    font: 15px "Work Sans", Arial, Helvetica, sans-serif;
+    color: rgba(0, 0, 0, 0.7);
+    line-height: 1.5rem;
+}
+
+.genereal-reason-image {
+    height: 420px;
+    margin-top: 40px;
+    overflow: hidden;
+}
+
+.genereal-reason-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+}
+
+@media (max-width: 960px) {
+    .reasons-to-choose-service {
+        margin: 50px 4%;
+    }
+}
+
+@media (max-width: 780px) {
+    .reason-to-choose-service {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

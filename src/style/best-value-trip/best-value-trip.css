@@ -1,0 +1,33 @@
+.best-value-trips-card {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px 8%;
+    gap: 2.75%;
+}
+
+.best-value-trip-card {
+    width: 31.5%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.best-value-trip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: -10px 20px 30px rgba(0, 0, 0, 0.2), 10px 20px 30px rgba(0, 0, 0, 0.2);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+@media (max-width: 960px) {
+    .best-value-trips-card {
+        margin: 50px 4%;
+    }
+}
+
+@media (max-width: 780px) {
+    .best-value-trip-card {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}

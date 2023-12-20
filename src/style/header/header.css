@@ -1,0 +1,96 @@
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+
+.nav-bar-container {
+    height: 100%;
+}
+
+
+.nav-bar {
+    display: flex;
+    height: 100%;
+}
+
+.nav-bar a
+{
+    display: flex;
+    padding-right: 20px;
+    margin-right: 5px;
+    font-size: 14px;
+    font-weight: 100;
+    height: 100%;
+    align-items: center;
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+}
+
+.nav-bar-white {
+    color: white;
+}
+
+.nav-bar a:hover
+{
+    cursor: pointer;
+    color: red;
+}
+
+.logo-icon {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon {
+    cursor: pointer;
+}
+
+
+.menu-icon {
+    font-size: 80%;
+}
+
+.cart-icon {
+    font-size: 110%;
+}
+
+
+/* CSS cho màn hình lớn */
+@media (min-width: 1200px) {
+    #header {
+        padding: 0 90px;
+    }
+}
+  
+  /* CSS cho màn hình trung bình và nhỏ */
+@media (max-width: 1200px) {
+    #header {
+        padding: 0 30px;
+    }
+}
+
+@media (min-width: 980px) {
+    .logo-icon {
+        width: 45px;
+    }
+}
+
+@media (max-width: 980px) {
+    .logo-icon {
+        width: 65px;
+    }
+
+    .nav-bar a {
+        display: none;
+    }
+}

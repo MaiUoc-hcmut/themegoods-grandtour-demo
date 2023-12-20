@@ -1,95 +1,45 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client'
+import React, { Fragment, useState } from 'react';
+import Header from '@/component/header';
+import SideBar from '@/component/sidebar/sidebar';
+import OptionMenuBar from '@/component/optionMenuBar';
+import SecondarySidebar from '@/component/sidebar/secSidebar';
+import SearchTrip from '@/component/section/seachtrip';
+import PopularDestination from '@/component/section/popularDestination';
+import BestValueTrip from '@/component/section/bestValueTrip';
+import WhyChooseUs from '@/component/section/whyChooseUs';
+import ArticleAndTips from '@/component/section/article&Tips';
+import BackToTop from '@/component/backToTop';
+import "@/style/main-page.css";
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
+
+    const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
+    const [isSecSidebarOpen, setIsSecSidebarOpen] = useState<boolean>(false);
+
+    return (
+        <Fragment>
+            <Header
+                setIsSidebarOpen={setIsSidebarOpen}
+                isVisible={!isSidebarOpen}
             />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+            <SearchTrip />
+            <PopularDestination />
+            <BestValueTrip />
+            <WhyChooseUs />
+            <ArticleAndTips />
+            <BackToTop />
+            <OptionMenuBar 
+                state={isSecSidebarOpen}
+                setOpen={setIsSecSidebarOpen}
+            />
+            <SideBar 
+                onClose={() => setIsSidebarOpen(false)} 
+                isVisible={isSidebarOpen}
+            />
+            <SecondarySidebar 
+                isVisible={isSecSidebarOpen}
+            />
+        </Fragment>
+    );
 }

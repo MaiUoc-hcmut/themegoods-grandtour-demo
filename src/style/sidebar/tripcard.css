@@ -1,0 +1,55 @@
+.sidebar-trip-card-container {
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.image-theme {
+    width: 100%;    
+    overflow: hidden;
+}
+
+.image-theme img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.trip-price {
+    position: absolute;
+    top: 35%;
+    left: 0;
+    padding: 5px 10px;
+    background-color: #FF4A52;
+    color: white;
+    font-weight: bold;
+}
+
+.old-price {
+    font-weight: normal;
+    font-size: 80%;
+    color: rgb(219, 200, 176);
+}
+
+.trip-name {
+    position: absolute;
+    top: 60%;
+    left: 8%;
+    color: white;
+    font-weight: bolder;
+}
+
+.trip-rating {
+    position: absolute;
+    top: 70%;
+    left: 8%;
+    font-size: 21px;
+}
+
+.star {
+    color: white;
+}
+
+.star-filled {
+    color: #1EC6B6;
+}

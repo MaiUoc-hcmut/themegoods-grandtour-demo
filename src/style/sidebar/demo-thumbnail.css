@@ -1,0 +1,72 @@
+
+
+.demo-thumbnail-container {
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.thumbnail-image {
+    width: 100%;
+}
+
+.thumbnail-image img {
+    position: relative;
+    width: 95%;
+    transition: filter 0.3s ease-in-out;
+} 
+
+.thumbnail-image.hovered img {
+    filter: blur(2px) brightness(60%);
+}
+
+.thumbnail-name {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    transition: display 0.3s ease-in-out;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.thumbnail-name h6 {
+    font: 12px "Poppins", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.thumbnail-name.not-hovered,
+.launch-button.not-hovered
+{
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+.launch-button {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.launch-button a {
+    border: 2px solid white;
+    padding: 10px 20px;
+    font: 12px "Work Sans", Arial, Helvetica, sans-serif;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.launch-button a:hover {
+    background-color: white;
+    color: black;
+}

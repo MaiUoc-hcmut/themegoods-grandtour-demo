@@ -1,0 +1,130 @@
+@keyframes openSidebar {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.sidebar-wrapper {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(10px);
+}
+
+.sidebar-container {
+    background-color: #FFFFFFD9;
+    height: 90%;
+    padding: 35px 40px;
+    right: 0;
+    top: 0;
+    position: fixed;
+    animation-duration: 0.15s;
+    overflow-y: auto;
+    z-index: 999;
+}
+
+.sidebar-container.open {
+    animation-name: openSidebar;
+}
+
+.sidebar-container.close {
+    animation-name: closeSidebar;
+}
+
+.sidebar-close-button-container {
+    height: 40px;
+    margin-bottom: 30px;
+}
+
+.sidebar-close-button {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #FF4A52;
+    right: 30px;
+    cursor: pointer;
+    position: absolute;
+}
+
+.cross {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 1px;
+    background-color: transparent;
+}
+
+.cross:before, .cross:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.cross:before {
+    transform: rotate(45deg);
+}
+
+.cross:after {
+    transform: rotate(135deg);
+}
+
+/* .sidebar-nav-menu {
+} */
+
+.sidebar-nav-menu a {
+    display: block;
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.sidebar-nav-menu a:hover {
+    color: red;
+}
+
+.sidebar-rec-tour {
+    margin-top: 50px;
+}
+
+.sidebar-social-menu {
+    display: flex;
+    margin-top: 40px;
+}
+
+.social-network-icon {
+    font-size: 24px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+    color: inherit;
+}
+
+.social-network-icon:hover {
+    color: rgb(249, 21, 21);
+}
+
+@media (min-width: 765px) {
+    .sidebar-container {
+        width: 280px;
+    }
+}
+
+@media (max-width: 764px) {
+    .sidebar-container {
+        width: 170px;
+    }
+}

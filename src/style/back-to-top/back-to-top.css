@@ -1,0 +1,24 @@
+#back-to-top-button {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #1EC6B6;
+    cursor: pointer;
+    transition: transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    
+}
+
+#back-to-top-button:hover {
+    transform: translateY(-5px);
+}
+
+.invisible-button {
+    display: none;
+}

@@ -1,0 +1,38 @@
+@keyframes scaleUp {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+}
+
+.dropdown {
+    display: block;
+    position: absolute;
+    background-color: #f9f9f9;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    min-width: 220px;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+    animation-name: scaleUp;
+    animation-duration: 0.1s;
+    top: 100%;
+    left: -15px;
+    z-index: 2;
+}
+
+.dropdown div {
+    display: block;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+}
+
+.dropdown div:hover {
+    color: red;
+}
+
+.dropdown-element {
+    position: relative;
+}

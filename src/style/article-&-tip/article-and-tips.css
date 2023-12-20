@@ -1,0 +1,37 @@
+#article-and-tips-container {
+    margin-bottom: 100px;
+}
+
+.tips-card {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px 8%;
+    gap: 2.75%;
+}
+
+.tip-card {
+    width: 31.5%;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: -10px 20px 30px rgba(0, 0, 0, 0.2), 10px 20px 30px rgba(0, 0, 0, 0.2);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+@media (max-width: 960px) {
+    .tips-card {
+        margin: 50px 4%;
+    }
+}
+
+@media (max-width: 780px) {
+    .tip-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

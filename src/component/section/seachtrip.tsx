@@ -1,0 +1,243 @@
+'use client'
+import React, { Fragment, useState, useEffect } from "react";
+import { SearchOutlined, CalendarOutlined, SwapOutlined, DownOutlined, UpOutlined, DollarOutlined } from '@ant-design/icons';
+import ReactPlayer from "react-player";
+import "@/style/search/search-trip.css";
+
+declare global {
+    interface Window {
+        onYouTubeIframeAPIReady: () => void,
+        YT: any
+    }
+}
+
+const MonthToSelect = [
+    "Any Month",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+];
+
+const TripFilter = [
+    "Sort By Date",
+    "Price Low to High",
+    "Price High to Low",
+    "Sort By Name",
+    "Sort By Popularity",
+    "Sort By Review Score"
+];
+
+const Categories = [
+    "All Categories",
+    "Moutain",
+    "Rural",
+    "Snow & Ice",
+    "Wildlife"
+];
+
+const Destination = [
+    "Any Destinations",
+    "Tokyo",
+    "Seoul",
+    "Paris",
+    "London",
+    "Venice",
+    "Miami",
+    "Rome",
+    "Prague",
+    "California",
+    "Kyoto",
+    "Hong Kong",
+    "Santorini"
+]
+
+
+export default function SearchTrip() {
+
+    const [advanced, setAdvanced] = useState<boolean>(false);
+
+    const monthOptions = MonthToSelect.map((month) => {
+        return (
+            <option key={month} value={month}>
+                {month}
+            </option>
+        )
+    });
+
+    const sortOptions = TripFilter.map((option) => {
+        return (
+            <option key={option} value={option}>
+                {option}
+            </option>
+        )
+    });
+
+    const categoryOptions = Categories.map((category) => {
+        return (
+            <option key={category} value={category}>
+                {category}
+            </option>
+        )
+    });
+
+    const destinationOptions = Destination.map((destination) => {
+        return (
+            <option key={destination} value={destination}>
+                {destination}
+            </option>
+        )
+    })
+
+    useEffect(() => {
+        // This code loads the IFrame Player API code asynchronously.
+        const tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        if (firstScriptTag.parentNode) {
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        }
+
+        let player;
+        // This function creates an <iframe> (and YouTube player)
+        // after the API code downloads.
+        window.onYouTubeIframeAPIReady = function() {
+            player = new window.YT.Player('player', {
+                videoId: "JPe2mwq96cw",
+                playerVars: {
+                    'autoplay': 1,
+                    'loop': 1,
+                    'playlist': "JPe2mwq96cw",
+                    'controls': 0,
+                    'rel': 0,
+                    'autohide': 1,
+                    'showinfo': 0,
+                    'mute': 1,
+                    'playsinline': 1
+                }
+            });
+        }
+    }, []);
+
+    return (
+        <Fragment>
+            <div className="search-trip-wrapper" id="search-trip">
+                <div className="search-trip-container">
+                    <div className="title-and-tagline" style={{ color: "white" }}>
+                        <h2 className="search-trip-title" style={{ margin: 0 }}>
+                            Where do you want to go?
+                        </h2>
+                        <div className="search-trip-tagline">
+                            Trips, experiences, and places. All in one service.
+                        </div>
+                    </div>
+                    <div className="search-field" id="search-field">
+                        <div className="default-field">
+                            <div className="default-search-field">
+                                <div className="filter-field">
+                                    <input type="text" placeholder="Destination city" />
+                                </div>
+                                <div className="icon-search-field">
+                                    <SearchOutlined style={{ opacity: 0.4 }}  />
+                                </div>
+                            </div>
+                            <div className="default-search-field">
+                                <div className="filter-field">
+                                    <select defaultChecked defaultValue="Any Month">
+                                        {monthOptions}
+                                    </select>
+                                </div>
+                                <div className="icon-search-field">
+                                    <CalendarOutlined style={{ opacity: 0.4 }} />
+                                </div>
+                            </div>
+                            <div className="default-search-field">
+                                <div className="filter-field">
+                                    <select>
+                                        {sortOptions}
+                                    </select>   
+                                </div>
+                                <div className="icon-search-field">
+                                    <SwapOutlined style={{ opacity: 0.4 }}  />
+                                </div>
+                            </div>
+                            <div className="search-button">
+                                <input type="submit" value="Search" />
+                            </div>
+                        </div>
+                        {
+                            advanced && (
+                                <div className="advanced-field">
+                                    <div className="advanced-search-field">
+                                        <div className="filter-field">
+                                            <select>
+                                                {categoryOptions}
+                                            </select>   
+                                        </div>
+                                        <div className="icon-search-field">
+                                            <DownOutlined style={{ opacity: 0.4 }}  />
+                                        </div>
+                                    </div>
+                                    <div className="advanced-search-field">
+                                        <div className="filter-field">
+                                            <select>
+                                                {destinationOptions}
+                                            </select>   
+                                        </div>
+                                        <div className="icon-search-field">
+                                            <DownOutlined style={{ opacity: 0.4 }}  />
+                                        </div>
+                                    </div>
+                                    <div className="advanced-search-field">
+                                        <div className="filter-field">
+                                            <input type="text" placeholder="Max budget ex. 500" />
+                                        </div>
+                                        <div className="icon-search-field">
+                                            <DollarOutlined style={{ opacity: 0.4 }}  />
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        }
+                        <div 
+                            className="show-advanced-field"
+                            onClick={() => setAdvanced(!advanced)}
+                        >
+                            <div style={{ marginRight: 5 }}>
+                                {
+                                    advanced === false ? 
+                                    <DownOutlined /> :
+                                    <UpOutlined />
+                                }
+                            </div>
+                            <p>Advanced Search</p>
+                        </div>
+                    </div>
+                </div>
+                <div 
+                    className="iframe-container"
+                    id="background-youtube-player"
+                    data-jarallax-video="https://www.youtube.com/watch?v=JPe2mwq96cw"
+                >
+                    <iframe 
+                        src="https://youtube.com/embed/JPe2mwq96cw?autoplay=1&controls=0&showinfo=0&autohide=1&mute=1&loop=1&playlist=JPe2mwq96cw&rel=0"
+                        allowFullScreen
+                        style={{ border: "none" }}
+                    >
+                    </iframe>
+                </div>
+                {/* <div className="iframe-container">
+                    <div id="player"></div>
+                </div> */}
+            </div>
+        </Fragment>
+    );
+}
