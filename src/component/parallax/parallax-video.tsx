@@ -1,6 +1,6 @@
-'use client'
+"use client"
 import { Fragment, useEffect } from "react";
-import { jarallax } from 'jarallax';
+import { jarallax } from "jarallax";
 
 export default function JarallaxParallax() {
     

@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import React, { Fragment, useEffect, useState } from "react";
 import { SettingOutlined, HeartOutlined, ReadOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import "@/style/menubar/menubar.css";
@@ -18,10 +18,10 @@ export default function OptionMenuBar({
     }
 
     useEffect(() => {
-        window.addEventListener('resize', handleResize);
+        window.addEventListener("resize", handleResize);
 
         return () => {
-            window.removeEventListener('resize', handleResize);
+            window.removeEventListener("resize", handleResize);
         }
     }, [])
 

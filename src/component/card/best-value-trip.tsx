@@ -75,12 +75,12 @@ export default function BestValueTripCard({
                             newPrice === undefined 
                             ? (
                                 <div className="best-trip-price">
-                                    {`$${price.toLocaleString('en-US')}`}
+                                    {`$${price.toLocaleString("en-US")}`}
                                 </div>
                             )
                             : (
                                 <div className="best-trip-price">
-                                    <del className="old-price">{`$${price.toLocaleString('en-US')}`}</del> {`$${newPrice.toLocaleString('en-US')}`}
+                                    <del className="old-price">{`$${price.toLocaleString("en-US")}`}</del> {`$${newPrice.toLocaleString("en-US")}`}
                                 </div>
                             )
                         }

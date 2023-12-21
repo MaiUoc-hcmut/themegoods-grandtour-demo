@@ -1,8 +1,8 @@
-'use client'
+"use client"
 import React, { Fragment, useState, useEffect } from "react";
 import DropdownMenu from "./dropdown-menu/dropdown";
 import { DownOutlined, MenuOutlined, ShoppingCartOutlined } from "@ant-design/icons";
-import '@/style/header/header.css';
+import "@/style/header/header.css";
 
 
 export default function Header({
@@ -20,7 +20,7 @@ export default function Header({
 
     const [isHeaderVisible, setIsHeaderVisible] = useState<boolean>(true);
     const [prevScrollPos, setPrevScrollPos] = useState<number>(0);
-    const [bgColor, setBgColor] = useState<string>('');
+    const [bgColor, setBgColor] = useState<string>("");
 
     // Hiển thị hoặc ẩn header khi cuộn
     const handleScroll = () => {
@@ -28,7 +28,7 @@ export default function Header({
         const w = window.innerWidth;
         const visible = (prevScrollPos > currentScrollPos) || (w < 780);
 
-        const color = (window.scrollY > 300 && isVisible) ? 'white' : '';
+        const color = (window.scrollY > 300 && isVisible) ? "white" : "";
 
         setIsHeaderVisible(visible);
         setPrevScrollPos(currentScrollPos);
@@ -36,10 +36,10 @@ export default function Header({
     };
 
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener("scroll", handleScroll);
 
         return () => {
-            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener("scroll", handleScroll);
         };
     }, [prevScrollPos, isHeaderVisible, handleScroll]);
 
@@ -50,14 +50,14 @@ export default function Header({
                 style={{
                     top: (isHeaderVisible ? 0 : -80) || (isVisible ? 0 : -80),
                     backgroundColor: bgColor,
-                    transition: 'top 0.5s, background-color 0.5s',
+                    transition: "top 0.5s, background-color 0.5s",
                 }}
             >
                 <div className="home-link">
                     <a href="/">
                         <img 
                             src={
-                                bgColor === 'white' ? 
+                                bgColor === "white" ? 
                                 "https://themes-themegoods.b-cdn.net/grandtour/demo/wp-content/themes/grandtour/images/logo@2x.png" :
                                 "https://themes-themegoods.b-cdn.net/grandtour/demo/wp-content/themes/grandtour/images/logo@2x_white.png"
                             } 
@@ -71,7 +71,7 @@ export default function Header({
                 </div>
 
                 <div className="nav-bar-container">
-                    <div className={`nav-bar ${bgColor !== 'white' ? 'nav-bar-white' : ''}`}>
+                    <div className={`nav-bar ${bgColor !== "white" ? "nav-bar-white" : ""}`}>
                         <a 
                             onMouseEnter={() => setHoveredElement("home")}
                             onMouseLeave={() => setHoveredElement("")}

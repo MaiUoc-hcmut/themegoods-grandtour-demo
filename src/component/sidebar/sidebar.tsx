@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import SidebarTripCard from "../card/sidebar-trip";
 import { FacebookFilled, TwitterOutlined, YoutubeOutlined, InstagramOutlined, RedditOutlined } from "@ant-design/icons";
-import '@/style/sidebar/sidebar.css';
+import "@/style/sidebar/sidebar.css";
 
 export default function SideBar({
     onClose,
@@ -11,7 +11,7 @@ export default function SideBar({
     isVisible: boolean
 }) {
     const handleClose = (e: any) => {
-        if (e.target.id === 'wrapper') onClose(); 
+        if (e.target.id === "wrapper") onClose(); 
     }
 
     return (
@@ -22,7 +22,7 @@ export default function SideBar({
                 onClick={handleClose}
             >
             </div>
-            <div className={`sidebar-container ${isVisible ? 'open' : 'close'}`}>
+            <div className={`sidebar-container ${isVisible ? "open" : "close"}`}>
                 <div className="sidebar-close-button-container">
                     <div 
                         className="sidebar-close-button"

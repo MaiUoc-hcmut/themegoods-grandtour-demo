@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import React, { Fragment } from "react";
 import "@/style/header/submenu.css";
 
@@ -12,9 +12,9 @@ export default function SubMenu ({
     subMenu?: Array<string>,
 }) {
 
-    const submenu = subMenu?.map((site: string) => {
+    const submenu = subMenu?.map((site: string, index) => {
         return (
-            <div className="submenu-element">
+            <div className="submenu-element" key={index}>
                 {site}
             </div>
         );

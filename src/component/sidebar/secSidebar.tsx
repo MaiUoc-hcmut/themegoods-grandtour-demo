@@ -10,7 +10,7 @@ export default function SecondarySidebar({
 }) {
     return (
         <Fragment>
-            <div className={`secondary-sidebar-wrapper ${isVisible ? 'open' : 'close'}`}>
+            <div className={`secondary-sidebar-wrapper ${isVisible ? "open" : "close"}`}>
                 <div className="secondary-sidebar-container">
                     <div className="secondary-sidebar-child" id="create-grand-tour">
                         <div className="create-grand-tour-child">

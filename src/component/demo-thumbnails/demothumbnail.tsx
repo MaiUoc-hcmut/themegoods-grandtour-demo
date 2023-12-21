@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import React, { Fragment, useState } from "react";
 import "@/style/sidebar/demo-thumbnail.css";
 

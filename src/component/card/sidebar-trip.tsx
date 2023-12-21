@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import '@/style/sidebar/tripcard.css';
+import "@/style/sidebar/tripcard.css";
 
 export default function SidebarTripCard({
     price,
@@ -44,12 +44,12 @@ export default function SidebarTripCard({
                     newPrice === undefined 
                     ? (
                         <div className="trip-price">
-                            {`$${price.toLocaleString('en-US')}`}
+                            {`$${price.toLocaleString("en-US")}`}
                         </div>
                     )
                     : (
                         <div className="trip-price">
-                            <del className="old-price">{`$${price.toLocaleString('en-US')}`}</del> {`$${newPrice.toLocaleString('en-US')}`}
+                            <del className="old-price">{`$${price.toLocaleString("en-US")}`}</del> {`$${newPrice.toLocaleString("en-US")}`}
                         </div>
                     )
                 }

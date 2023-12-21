@@ -1,8 +1,8 @@
-'use client'
+"use client"
 import React, { Fragment, useState } from "react";
 import { RightOutlined } from "@ant-design/icons";
 import SubMenu from "./submenu";
-import '@/style/header/dropdown-menu.css';
+import "@/style/header/dropdown-menu.css";
 
 interface elementMenuData {
     key: string,
@@ -37,6 +37,7 @@ export default function DropdownMenu({
                 onMouseEnter={() => setHoveredElement(site.key)}
                 onMouseLeave={() => setHoveredElement("")}
                 className="dropdown-element"
+                key={site.key}
             >
                 <SubMenu
                     isOpen={isElementHovered(site.key)}

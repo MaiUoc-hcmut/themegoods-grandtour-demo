@@ -1,6 +1,6 @@
-'use client'
+"use client"
 import React, { Fragment, useState, useEffect } from "react";
-import { SearchOutlined, CalendarOutlined, SwapOutlined, DownOutlined, UpOutlined, DollarOutlined } from '@ant-design/icons';
+import { SearchOutlined, CalendarOutlined, SwapOutlined, DownOutlined, UpOutlined, DollarOutlined } from "@ant-design/icons";
 // import dynamic from "next/dynamic";
 import "@/style/search/search-trip.css";
 
@@ -11,10 +11,6 @@ declare global {
     }
 }
 
-// const DynamicJarallax = dynamic(
-//     () => import('@/component/parallax/parallax-video'),
-//     { ssr: false }
-// );
 
 const MonthToSelect = [
     "Any Month",
@@ -109,10 +105,10 @@ export default function SearchTrip() {
     }
 
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener("scroll", handleScroll);
 
         return () => {
-            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener("scroll", handleScroll);
         }
     })
 

@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import React, { Fragment, useState, useEffect } from "react";
 import { UpOutlined } from "@ant-design/icons";
 import "@/style/back-to-top/back-to-top.css";
