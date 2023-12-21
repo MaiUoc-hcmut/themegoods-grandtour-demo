@@ -112,11 +112,17 @@ export default function SearchTrip() {
         }
     });
 
-    const height = window.screen.height;
+    const [screenHeight, setScreenHeight] = useState(0);
+
+    useEffect(() => {
+        setScreenHeight(window.screen.height);
+    }, [])
+
+    
 
     return (
         <Fragment>
-            <div className="search-trip-wrapper" id="search-trip" style={{ height: height }}>
+            <div className="search-trip-wrapper" id="search-trip" style={{ height: screenHeight }}>
                 <div className={`search-trip-container ${advanced && "advanced"}`}>
                     <div className="title-and-tagline" style={{ color: "white" }}>
                         <h2 className="search-trip-title" style={{ margin: 0 }}>
@@ -215,13 +221,13 @@ export default function SearchTrip() {
                     data-jarallax-video="https://www.youtube.com/watch?v=JPe2mwq96cw"
                     style={{
                         top: scrollY / 2.5,
-                        height: height
+                        height: screenHeight
                     }}
                 >
                     <iframe 
                         src="https://youtube.com/embed/JPe2mwq96cw?autoplay=1&controls=0&showinfo=0&autohide=1&mute=1&loop=1&playlist=JPe2mwq96cw&rel=0"
                         allowFullScreen
-                        style={{ border: "none", height: height * 1.2, width: height * 2 }}
+                        style={{ border: "none", height: screenHeight * 1.2, width: screenHeight * 2 }}
                         className="iframe-video"
                     >
                     </iframe>
