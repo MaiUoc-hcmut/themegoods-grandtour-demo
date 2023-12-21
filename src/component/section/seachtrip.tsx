@@ -110,11 +110,13 @@ export default function SearchTrip() {
         return () => {
             window.removeEventListener("scroll", handleScroll);
         }
-    })
+    });
+
+    const height = window.screen.height;
 
     return (
         <Fragment>
-            <div className="search-trip-wrapper" id="search-trip">
+            <div className="search-trip-wrapper" id="search-trip" style={{ height: height }}>
                 <div className={`search-trip-container ${advanced && "advanced"}`}>
                     <div className="title-and-tagline" style={{ color: "white" }}>
                         <h2 className="search-trip-title" style={{ margin: 0 }}>
@@ -212,13 +214,14 @@ export default function SearchTrip() {
                     id="background-youtube-player"
                     data-jarallax-video="https://www.youtube.com/watch?v=JPe2mwq96cw"
                     style={{
-                        top: scrollY / 2.5
+                        top: scrollY / 2.5,
+                        height: height
                     }}
                 >
                     <iframe 
                         src="https://youtube.com/embed/JPe2mwq96cw?autoplay=1&controls=0&showinfo=0&autohide=1&mute=1&loop=1&playlist=JPe2mwq96cw&rel=0"
                         allowFullScreen
-                        style={{ border: "none" }}
+                        style={{ border: "none", height: height * 1.2, width: height * 2 }}
                         className="iframe-video"
                     >
                     </iframe>
