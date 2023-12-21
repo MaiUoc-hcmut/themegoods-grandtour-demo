@@ -119,7 +119,7 @@ export default function SearchTrip() {
     return (
         <Fragment>
             <div className="search-trip-wrapper" id="search-trip">
-                <div className="search-trip-container">
+                <div className={`search-trip-container ${advanced && "advanced"}`}>
                     <div className="title-and-tagline" style={{ color: "white" }}>
                         <h2 className="search-trip-title" style={{ margin: 0 }}>
                             Where do you want to go?

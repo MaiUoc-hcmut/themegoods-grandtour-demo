@@ -18,12 +18,12 @@
 }
 
 .search-trip-title {
-    font: 36px "Poppins", Arial, Helvetica, sans-serif;
+    font: 36px "Poppins", var(--font);
     font-weight: 800;
 }
 
 .search-trip-tagline {
-    font: 15px "Poppins", Arial, Helvetica, sans-serif;
+    font: 15px "Poppins", var(--font);
     opacity: 0.7;
 }
 
@@ -105,7 +105,7 @@ select {
 .show-advanced-field {
     display: flex;
     color: white;
-    font: 13px "Work Sans", Arial, Helvetica, sans-serif;
+    font: 13px "Work Sans", var(--font);
     cursor: pointer;
 }
 
@@ -129,7 +129,7 @@ select {
 }
 
 select, option, ::placeholder {
-    font: 15px "Work Sans", Arial, Helvetica, sans-serif;
+    font: 15px "Work Sans", var(--font);
     color: rgba(0, 0, 0, 0.5);
 }
 
@@ -175,7 +175,16 @@ select, option, ::placeholder {
     }
 
     .search-trip-container {
-        transform: translateY(10%);
+        transform: translateY(20%);
+    }
+
+    .search-trip-container.advanced {
+        transform: translateY(15%);
+    }
+
+    .search-trip-title {
+        font: 24px "Poppins", var(--font);
+        font-weight: 800;
     }
 
     .jarallax {
@@ -200,7 +209,7 @@ select, option, ::placeholder {
     .search-button
     {
         width: 100%;
-        margin-bottom: 15px;
+        margin-bottom: 2%;
     }
 
     .search-field {

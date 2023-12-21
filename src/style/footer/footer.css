@@ -128,7 +128,7 @@
     }
 
     .footer-wrapper-child h2 {
-        font: 18px "Poppins", Arial, Helvetica, sans-serif;
+        font: 18px "Poppins", var(--font);
         font-weight: bold;
         color: white;
     }
@@ -148,5 +148,13 @@
 
     .footer-bar-wrapper {
         padding: 20px 20px;
+        flex-direction: column-reverse;
+        font-size: 11px;
+        height: 40px;
+    }
+
+    .footer-nav-menu a {
+        margin-left: 0;
+        margin-right: 15px;
     }
 }

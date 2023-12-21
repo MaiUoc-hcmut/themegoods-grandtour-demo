@@ -28,7 +28,7 @@
 }
 
 .description-sec-sidebar {
-    font: 13px "Work Sans", Arial, Helvetica, sans-serif;
+    font: 13px "Work Sans", var(--font);
     opacity: 0.7;
 }
 

@@ -1,18 +1,35 @@
 .sidebar-trip-card-container {
-    width: 100%;
+    width: 265px;
+    height: 180px;
     position: relative;
     margin-bottom: 20px;
     cursor: pointer;
 }
 
 .image-theme {
-    width: 100%;    
+    width: 265px;
+    height: 180px;   
     overflow: hidden;
 }
 
+.image-theme::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 45%;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
 .image-theme img {
-    width: 100%;
+    width: 265px;
+    height: 180px;
     border-radius: 5px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .trip-price {
@@ -52,4 +69,44 @@
 
 .star-filled {
     color: #1EC6B6;
+}
+
+@media (max-width: 779px) {
+    .sidebar-trip-card-container {
+        height: 200px;
+        width: 175px;
+    }
+
+    .image-theme {
+        height: 200px;
+        width: 175px;  
+        overflow: hidden;
+    }
+    
+    .image-theme img {
+        height: 200px;
+        width: 175px;
+        border-radius: 5px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .trip-price {
+        top: 45%;
+    }
+
+    .trip-name {
+        position: absolute;
+        top: 70%;
+        left: 8%;
+        color: white;
+        font-weight: bolder;
+    }
+    
+    .trip-rating {
+        position: absolute;
+        top: 80%;
+        left: 8%;
+        font-size: 21px;
+    }
 }

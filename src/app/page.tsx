@@ -1,5 +1,5 @@
 'use client'
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import Header from '@/component/header';
 import SideBar from '@/component/sidebar/sidebar';
 import OptionMenuBar from '@/component/optionMenuBar';
@@ -16,6 +16,15 @@ export default function Home() {
 
     const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
     const [isSecSidebarOpen, setIsSecSidebarOpen] = useState<boolean>(false);
+
+    useEffect(() => {
+        if (isSidebarOpen) {
+            document.body.style.overflow = 'hidden';
+        }
+        else {
+            document.body.style.overflow = 'auto';
+        }
+    }, [isSidebarOpen])
 
     return (
         <Fragment>

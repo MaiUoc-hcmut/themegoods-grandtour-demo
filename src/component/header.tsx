@@ -12,8 +12,6 @@ export default function Header({
     setIsSidebarOpen: (value: boolean) => void,
     isVisible: boolean,
 }) {
-    if (!isVisible) return null;
-    
     const [hoveredElement, setHoveredElement] = useState<string>("");
 
     const isElementHovered = (element: string) => {
@@ -30,7 +28,7 @@ export default function Header({
         const w = window.innerWidth;
         const visible = (prevScrollPos > currentScrollPos) || (w < 780);
 
-        const color = window.scrollY > 300 ? 'white' : '';
+        const color = (window.scrollY > 300 && isVisible) ? 'white' : '';
 
         setIsHeaderVisible(visible);
         setPrevScrollPos(currentScrollPos);
@@ -50,7 +48,7 @@ export default function Header({
             <div 
                 id="header"
                 style={{
-                    top: isHeaderVisible ? 0 : -80,
+                    top: (isHeaderVisible ? 0 : -80) || (isVisible ? 0 : -80),
                     backgroundColor: bgColor,
                     transition: 'top 0.5s, background-color 0.5s',
                 }}

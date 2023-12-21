@@ -35,6 +35,6 @@
     bottom: 15px;
     left: 20px;
     color: white;
-    font: 22px "Work Sans", Arial, Helvetica, sans-serif;
+    font: 22px "Work Sans", var(--font);
     font-weight: 800;
 }

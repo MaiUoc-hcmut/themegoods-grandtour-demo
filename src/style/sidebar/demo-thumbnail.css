@@ -33,7 +33,7 @@
 }
 
 .thumbnail-name h6 {
-    font: 12px "Poppins", Arial, Helvetica, sans-serif;
+    font: 12px "Poppins", var(--font);
     font-weight: bold;
 }
 
@@ -58,7 +58,7 @@
 .launch-button a {
     border: 2px solid white;
     padding: 10px 20px;
-    font: 12px "Work Sans", Arial, Helvetica, sans-serif;
+    font: 12px "Work Sans", var(--font);
     color: white;
     border-radius: 4px;
     cursor: pointer;

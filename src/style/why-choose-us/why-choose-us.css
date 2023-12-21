@@ -22,13 +22,13 @@
 }
 
 .main-reason {
-    font: 20px "Poppins", Arial, Helvetica, sans-serif;
+    font: 20px "Poppins", var(--font);
     font-weight: 800;
     margin: 15px 0;
 }
 
 .reason-description {
-    font: 15px "Work Sans", Arial, Helvetica, sans-serif;
+    font: 15px "Work Sans", var(--font);
     color: rgba(0, 0, 0, 0.7);
     line-height: 1.5rem;
 }
