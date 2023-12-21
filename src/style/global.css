@@ -10,7 +10,7 @@
 .title {
     font: 36px "Poppins", var(--font);
     font-weight: 800;
-    margin: 40px 0 0 0;
+    padding: 40px 0 0 0;
 }
 
 .tagline {
