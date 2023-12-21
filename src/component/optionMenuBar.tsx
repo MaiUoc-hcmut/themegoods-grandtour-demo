@@ -13,14 +13,9 @@ export default function OptionMenuBar({
 
     const [w, setW] = useState(0);
     useEffect(() => {
-        handleResize();
-    }, [])
-
-    const handleResize = () => {
-        setW(window.innerWidth);
-    }
-
-    useEffect(() => {
+        const handleResize = () => {
+            setW(window.innerWidth);
+        }
         window.addEventListener("resize", handleResize);
 
         return () => {
