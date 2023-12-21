@@ -11,7 +11,7 @@ export default function PopularDestination() {
                         Popular Destinations
                     </h2>
                     <div className="tagline">
-                        World's best tourist destinations
+                        {`World's best tourist destinations`}
                     </div>
                 </div>
                 <div className="destinations-card">
