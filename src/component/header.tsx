@@ -3,6 +3,7 @@ import React, { Fragment, useState, useEffect } from "react";
 import DropdownMenu from "./dropdown-menu/dropdown";
 import { DownOutlined, MenuOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import "@/style/header/header.css";
+import axios from 'axios';
 
 
 export default function Header({
@@ -34,6 +35,13 @@ export default function Header({
         setPrevScrollPos(currentScrollPos);
         setBgColor(color);
     };
+
+    // Test call API
+    const callAPI = async () => {
+        const response = await axios.get("http://13.229.142.225:4001/api/v1/courses/page/1");
+
+        console.log(response.data);
+    }
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
@@ -273,7 +281,10 @@ export default function Header({
                                 className="icon menu-icon" 
                                 onClick={() => setIsSidebarOpen(true)}
                             />
-                            <ShoppingCartOutlined className="icon cart-icon" />
+                            <ShoppingCartOutlined 
+                                className="icon cart-icon" 
+                                onClick={() => callAPI()}
+                            />
                         </div>
                     </div>
                 </div>
